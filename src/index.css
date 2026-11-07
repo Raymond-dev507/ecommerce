@@ -1,0 +1,75 @@
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Global Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root */
+:root {
+    --primary-color: #071b3d;
+    --secondary-color: #e9a817;
+    --text-color: #101b35;
+    --light-bg: #f7f7fa;
+    --border-color: #e5e5e5;
+    --white: #ffffff;
+}
+
+/* HTML */
+html {
+    width: 100%;
+    min-width: 320px;
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    width: 100%;
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+
+    font-family: 'Inter', sans-serif;
+    background-color: var(--white);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+/* React root */
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Images */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Buttons */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+    font-family: inherit;
+    max-width: 100%;
+}

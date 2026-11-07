@@ -1,0 +1,101 @@
+/* ===== Product gallery ===== */
+
+.pg {
+    --tint-soft: #eceef6;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+}
+
+.pg.has-thumbs {
+    grid-template-columns: 58px minmax(0, 1fr);
+}
+
+.pg[data-category="Beauty & Personal Care"] { --tint-soft: #fde3d9; }
+.pg[data-category="Electronics & Gadgets"]  { --tint-soft: #e3e9fb; }
+.pg[data-category="Fashion & Apparel"]      { --tint-soft: #fde6dc; }
+.pg[data-category="Home & Kitchen"]         { --tint-soft: #fdf0dc; }
+.pg[data-category="Health & Fitness"]       { --tint-soft: #f6e6ea; }
+
+.pg-thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 420px;
+    overflow: hidden;
+}
+
+.pg-thumbs button {
+    width: 58px;
+    height: 58px;
+    padding: 0;
+    flex: none;
+    border: 1.5px solid var(--border, #ececf0);
+    border-radius: 8px;
+    background: var(--tint-soft);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.pg-thumbs button.active {
+    border-color: #e6a817;
+}
+
+.pg-thumbs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pg-more {
+    align-self: center;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+    font-size: 9px;
+}
+
+.pg-main {
+    position: relative;
+    aspect-ratio: 1 / 0.95;
+    max-height: 520px;
+    border-radius: 12px;
+    background: var(--tint-soft);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pg-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    padding: 18px;
+    display: block;
+}
+
+
+
+@media (max-width: 800px) {
+    .pg.has-thumbs {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pg.has-thumbs .pg-main {
+        order: -1;
+    }
+
+    .pg-thumbs {
+        flex-direction: row;
+        max-height: none;
+        overflow-x: auto;
+    }
+}
