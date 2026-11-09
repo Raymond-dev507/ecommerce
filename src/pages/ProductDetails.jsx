@@ -1,8 +1,8 @@
-import { useEffect } from 'react'
+import { useEffect,useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { FaHouse, FaChevronRight } from 'react-icons/fa6'
 import productsData from '../context/productsData'
-
+import { productsContext } from '../context/productsContext'
 import ProductGallery from '../component/ProductDetails/ProductGallery'
 import ProductInfo from '../component/ProductDetails/ProductInfo'
 import ProductTabs from '../component/ProductDetails/ProductTabs'
@@ -12,7 +12,8 @@ import './ProductDetails.css'
 
 export default function ProductDetails({ onAddToCart }) {
     const { id } = useParams()
-    const product = productsData.data.find((p) => String(p.id) === String(id))
+    const data = useContext(productsContext)
+    const product = data.find((p) => String(p.id) === String(id))
 
     useEffect(() => {
         window.scrollTo({ top: 0 })
