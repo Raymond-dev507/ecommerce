@@ -1,7 +1,6 @@
 import { useEffect,useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { FaHouse, FaChevronRight } from 'react-icons/fa6'
-import productsData from '../context/productsData'
 import { productsContext } from '../context/productsContext'
 import ProductGallery from '../component/ProductDetails/ProductGallery'
 import ProductInfo from '../component/ProductDetails/ProductInfo'
