@@ -1,12 +1,14 @@
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa6'
-import productsData from '../../context/productsData'
 import ProductCard from '../ProductCard'
+import { useContext } from 'react'
+import { productsContext } from '../../context/productsContext'
 import '../ProductListing.css' // card styles (.pcard ...) live here
 import './RelatedProducts.css'
 
 export default function RelatedProducts({ product, onAddToCart, limit = 5 }) {
-    const related = productsData.data
+    const data = useContext(productsContext)
+    const related = data
         .filter((p) => p.category === product.category && p.id !== product.id)
         .slice(0, limit)
 
