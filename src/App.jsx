@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-// import NotFound from './pages/NotFound'
+import NotFound from './pages/NotFound'
 import Products from './pages/Products'
 import ProductDetails from './pages/ProductDetails'
 import Layout from './component/Layout'
@@ -17,7 +17,7 @@ function App() {
 
         </Route>
 
-        {/* <Route path='*' element={<NotFound />} /> */}
+        <Route path='*' element={<NotFound />} />
       </Routes>
 
 
