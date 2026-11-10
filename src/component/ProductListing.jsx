@@ -37,10 +37,7 @@ const SORT_OPTIONS = [
 
 
 export default function ProductListing({ onResultsChange, onAddToCart }) {
-    // const allProducts = productsData.data
     const allProducts = useContext(productsContext)
-    console.log('ALL PRODUCTS:', allProducts)
-    console.log('IS ARRAY:', Array.isArray(allProducts))
     const [searchParams] = useSearchParams()
     const urlSearch = searchParams.get('search') || ''
     const urlCategory = searchParams.get('category') || ''
